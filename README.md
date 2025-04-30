@@ -43,9 +43,9 @@ Thank you for your interest in our fullstack developer role. As part of our scre
 
 ### To submit your solution:
 
+* Clone this repository to your local machine.
 * Create a new public repository on your own GitHub account. Please name this repository clearly, for example: [YourGitHubUsername]-log-analysis.
-* Clone the repository (the one containing the log file and these instructions) to your local machine.
-* Copy the required files from the cloned repository into the main branch of your newly created public repository. Alternatively, you can initialise your new repository and then add the necessary files.
+* Copy the required files from the cloned version of this repository into the main branch of your newly created public repository.
 * Develop your solution in a feature branch within your new public repository, ensuring you address all the requirements of the test.
 * Once you have completed the exercise within the 5-day timeframe, create a pull request from your feature branch to the main branch of your own public repository.
 * In the description of this pull request (the one in your repository), please tag @livener-dev. This will notify our team to review your submission.
