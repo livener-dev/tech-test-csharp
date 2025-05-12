@@ -1,58 +1,63 @@
+
 # C# Tech Challenge
 
 ## Welcome!
 
-We're excited for you to tackle this C# coding challenge! It's designed to give us a glimpse into your technical skills and how you approach problem-solving.
+We're excited for you to tackle this C# coding challenge! It’s designed to give us a quick glimpse into your technical skills, and how you approach problem-solving.
 
-## Your Task (Estimated Time: ~4 hours)
+## Your Task (Estimated Time: **1–2 hours**)
 
-You'll be building a service that processes a log file (`logs/webrtc_studio.log`), provides a simple Web API, and includes unit tests.
+You’ll build a small service that processes a log file (`logs/webrtc_studio.log`) and exposes a simple Web API to return structured user activity data.
 
-### Here's a quick rundown:
+### What to Build
 
-1. **Log Parsing**: Extract key data from the provided log file (timestamps, event types, user IDs, etc.).
-2. **Data Aggregation**: Calculate user activity (joins/leaves) and error counts.
-3. **Web API**: Create a Core Minimal API endpoint (`/api/loganalysis`) to serve the aggregated data in JSON format (example JSON structure provided below).
-4. **Unit Testing**: Write tests to ensure your solution is robust.
+1. **Log Processing**: Read and extract relevant data from the provided log file (e.g., timestamps, event types, user IDs).
+2. **Data Aggregation**:
+   - Return a list of all user activity events (JOIN/LEAVE with timestamp and userId).
+   - Calculate the **total number of unique users** who joined the call.
+3. **Web API**: Create a minimal API endpoint (`/api/loganalysis`) that returns the aggregated data in JSON format (see example below).
+4. **(Optional Stretch Goal)**: Extend your solution to also extract and count error messages by severity level (e.g., `ERROR`, `CRITICAL`, `WARNING`) and include them in the response.
 
-### Example JSON Response:
+### Example JSON Response
 
-```json
+```
 {
-    "totalUserJoins": 4,
-    "totalUserLeaves": 4,
-    "userActivity": [
-        {
-            "userId": "456",
-            "event": "JOIN",
-            "timestamp": "2023-10-27 10:01:00"
-        }
-        // ... more user activity events
-    ],
-    "errors": {
-        "ERROR": 4,
-        "CRITICAL": 2,
-        "WARNING": 3
-    }
+    "uniqueUsers": 3,
+    "userActivity": [
+        {
+            "userId": "456",
+            "event": "JOIN",
+            "timestamp": "2023-10-27 10:01:00"
+        }
+        // ... more user activity events
+    ],
+    "errors": {
+        "ERROR": 4,
+        "CRITICAL": 2,
+        "WARNING": 3
+    } // Optional: Only included if stretch goal is implemented
 }
 ```
 
 ## Submission & Timeline
 
-Thank you for your interest in our fullstack developer role. As part of our screening process, we invite you to complete the following technical exercise and submit your solution within 5 days of receiving these instructions.
+We’re excited to see what you build! Please follow the steps below to submit your solution.
 
-### To submit your solution:
+### How to Submit
 
 * Clone this repository to your local machine.
-* Create a new public repository on your own GitHub account. Please name this repository clearly, for example: [YourGitHubUsername]-log-analysis.
-* Copy the required files from the cloned version of this repository into the main branch of your newly created public repository.
-* Develop your solution in a feature branch within your new public repository, ensuring you address all the requirements of the test.
-* Once you have completed the exercise within the 5-day timeframe, create a pull request from your feature branch to the main branch of your own public repository.
-* In the description of this pull request (the one in your repository), please tag @livener-dev. This will notify our team to review your submission.
-* Ensure your repository includes a clear README file with instructions on how to run your application and any associated tests.
-* Use descriptive commit messages throughout your development process in your feature branch.
-* Clearly outline key features, approaches, review instructions, and trade-offs in your pull request description.
-
+* In your GitHub account, create a new public repository for this project (e.g., [your-github-username]-log-analysis).
+* Copy any necessary files from this repo into your new one.
+* Develop your solution in a feature branch of your repository.
+* Include a README.md file in your repository with clear instructions on how to run your application from the CLI.
+* When you're done, open a pull request from your feature branch into the main branch of your repo.
+* In your pull request description, please include:
+  1. Any assumptions, design decisions, or trade-offs you made.
+  2. Key features and approaches you took.
+  3. Clear testing and review instructions.
+* ✅ Once submitted, please email us a link to your pull request.
+* 📌 You can also tag @livener-dev in the pull request description to notify our team directly.
+* ⏱️ Please ensure your submission is completed within the agreed time frame.
 
 ## Evaluation
 
@@ -63,7 +68,7 @@ Thank you for your interest in our fullstack developer role. As part of our scre
 * **Testing:** How well you've covered key functionality with unit tests.
 * **Web API:** Functionality and JSON structure.
 
-**Note:** A working solution is required to proceed to the in person part of our interview.
+**Note:** A working solution is required to proceed to the in-person stage of the interview.
 
 To ensure a smooth transition to the second part of the interview, please pay close attention to the `/api/loganalysis` endpoint. Your working solution here is essential for the next steps. Please double-check that it's functioning as expected!
 
